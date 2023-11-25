@@ -1,0 +1,46 @@
+<main>
+    <div class="d-flex flex-row justify-content-around flex-wrap">
+        <?php $datos = $Cartas;
+        foreach($datos as $dato){
+        ?>
+        <div class="card  m-1" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $dato->Titulo?></h5>
+                <h6 class="card-title">
+                <?php 
+                    $autores = $Autores;
+                    foreach($autores as $autor){
+                        if($autor->Autor_id == $dato->Autor_id){
+                                echo $autor->Nombre_Autor;
+                        }           
+                    }
+                ?></h6>
+                <p class="card-text"><?php echo $dato->Descripcion ?></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><?php echo $dato->Genero?></li>
+                <li class="list-group-item">ID del libro: <?php echo $dato->Libro_id ?></li>
+            </ul>
+            <div class="card-body">
+                <a href="verMasGuest/<?php echo $dato->Libro_id ?>" class="card-link">Ver mas</a>
+            </div>
+        </div>
+        <?php 
+        }
+        ?>
+    </div>
+    <div>
+        <ul class="list-group">
+            <?php $autores = $Autores;
+                   
+            foreach($Autores as $autor): ?>
+                <div>
+                    <li class="list-group-item active" aria-current="true">AUTOR</li>
+                    <li class="list-group-item">Nombre: <?= $autor->Nombre_Autor ?></li>
+                    <li class="list-group-item">Profesion: <?= $autor->Profesion_Autor ?></li>
+                    <li class="list-group-item">Fecha de Nacimiento: <?= $autor->Fecha_Autor ?></li>
+                </div>
+            <?php endforeach ?>
+        </ul>
+    </div>
+</main>

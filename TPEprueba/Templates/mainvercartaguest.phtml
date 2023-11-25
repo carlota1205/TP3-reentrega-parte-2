@@ -1,0 +1,21 @@
+<main>
+    <div class="card">
+        <?php $libro = $carta;
+            //$libro =  devolverCarta($idLibro); ?>
+        <div class="card-header">
+        <?php 
+            echo $autor -> Nombre_Autor; //agregar + columnas a la tabla autor para mostrar
+            //$nombre = mostrarNombreAutor($libro->Autor_id); echo $nombre->Nombre_Autor 
+        ?>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"><?php echo $libro->Titulo?></h5>
+            <p class="card-text"><?php echo $libro->Descripcion ?></p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><?php echo $libro->Genero?></li>
+                <li class="list-group-item">ID del libro: <?php echo $libro->Libro_id ?></li>
+            </ul>
+            <a href="homeInvitado" class="card-link">Volver</a>
+        </div>
+    </div>
+</main>

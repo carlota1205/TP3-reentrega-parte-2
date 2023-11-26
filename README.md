@@ -1,5 +1,9 @@
 # TP3-reentrega-parte-2
 
+           <!--USUARIO: user -->
+           <!--PASSWORD: admin -->
+
+           
 Se trabajo en las siguientes correcciones:
 
 -Tienen un unico model/controller/view. Es un error grave ya que hay gran diferencia entre las tablas Autores y Libro.
@@ -18,3 +22,6 @@ Se trabajo en las siguientes correcciones:
 
 -No esta implementado el editar autor ni borrar autor.
  Se implementaron ambos items.
+
+-Listar libros según autor está privado.
+ Se paso dicha funcionalidad al Home 

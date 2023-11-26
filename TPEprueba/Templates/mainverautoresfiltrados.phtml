@@ -1,0 +1,55 @@
+<?php require_once 'header.phtml' ?>
+<main>  
+        <div class="card ms-4 my-4">
+            <div class="card-header">
+                Filtrar por autor
+            </div>
+            <div class="card-body">
+                <form action="filtrarAutor" method="post">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Seleccione autor</label>
+                        <select name="autorFiltrar" class="form-control" id="exampleFormControlSelect1">
+                        <?php $autores = $autores;
+                        foreach($autores as $autor){
+                        ?>
+                        <option value="<?php echo $autor->Autor_id ?>"><?php echo $autor->Nombre_Autor ?></option>
+                        <?php
+                        }
+                        ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="ingresar">
+                        <a href="homeInvitado" class="btn btn-primary">Volver</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+                
+    <div class="d-flex flex-row justify-content-around">
+        <?php $autorFiltrado = $idAutor;
+        foreach($autorFiltrado as $dato){
+        ?>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $dato->Titulo?></h5>
+                <h6 class="card-title"><?php
+                foreach($autores as $autor){
+                    if($autor->Autor_id == $dato->Autor_id){
+                        echo $autor->Nombre_Autor;
+                    }
+                }
+                ?></h6>
+                <p class="card-text"><?php echo $dato->Descripcion ?></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><?php echo $dato->Genero?></li>
+                <li class="list-group-item">ID del libro: <?php echo $dato->Libro_id ?></li>
+            </ul>
+        </div>
+        <?php 
+        }
+        ?>
+    </div>
+</main>

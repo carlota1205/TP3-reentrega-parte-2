@@ -1,0 +1,24 @@
+<main> 
+    <div class="card">
+        <?php $libro = $carta;?>
+        <div class="card-header">
+            <h6>Datos del Autor</h6>
+            <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><?php echo$autor -> Nombre_Autor?></li>
+                    <li class="list-group-item">Ocupacion: <?php echo $autor -> Profesion_Autor ?></li>
+                    <li class="list-group-item">Fecha de Nacimiento:<?php echo $autor -> Fecha_Autor ?></li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h6>Datos del Libro</h6>
+            <h5 class="card-title"><?php echo $libro->Titulo?></h5>
+            <p class="card-text"><?php echo $libro->Descripcion ?></p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><?php echo $libro->Genero?></li>
+                <li class="list-group-item">ID del libro: <?php echo $libro->Libro_id ?></li>
+            </ul>
+            <a href="delete/<?php echo $libro->Libro_id ?>" class="card-link">Eliminar</a>
+            <a href="homeAdmin" class="card-link">Volver</a>
+        </div>
+    </div>
+</main>
